@@ -55,6 +55,10 @@ Built as a training exercise to explore:
 1. Clone or download the repository to your local machine.
 2. Open the `online-shop.html` file in your browser.
 3. Navigate between pages (sign-in, help, shop, etc.) and explore the UI—no server setup needed.
+Or
+View it using that link below:
+
+https://om1812ar.github.io/Online-shop/
 
 ---
 
@@ -62,8 +66,13 @@ Built as a training exercise to explore:
 
 Online-store/
 ├── online-shop.html      # Single HTML file containing all pages and functionality
+
 └── Index.html            # Sign In form to help the user simulate the sign in process
+
 └── Signup.html           # Another form that helps the user simulate the registeration process
+
 └── reset-password.html   # It's a page that helps the user confirm his account to reset his forgotten password
+
 └── new-password.html     # It's the page where the user can create the new password
+
 └── README.md             # Project documentation

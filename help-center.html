@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="O&M Help Center - FAQs, account setup, password reset, and return policy for your fashion needs.">
+<meta name="keywords" content="O&M, help center, FAQs, account setup, password reset, return policy">
+<meta name="author" content="Omar Gouda">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+<title>O&M Help Center</title>
+<script src="script.js" defer></script>
+<style>
+body {font-family: Arial, sans-serif;background-color: #fff;margin: 0;padding: 0;}
+header {background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop') center/cover no-repeat;padding: 60px 20px;text-align: center;color: #fff;position: relative;}
+header::after {content: "";position: absolute;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.4);z-index: 1;}
+header h1, header p {position: relative;z-index: 2;}
+header h1 {font-size: 2.5rem;font-weight: bold;margin-bottom: 10px;letter-spacing: 2px;}
+header p {font-size: 1.2rem;margin: 0;}
+main {max-width: 1000px;margin: 40px auto;padding: 0 20px;}
+.help-nav {background: #f8f8f8;padding: 20px;border-radius: 8px;box-shadow: 0 2px 8px rgba(0,0,0,0.05);margin-bottom: 30px;}
+.help-nav ul {list-style: none;padding: 0;margin: 0;display: grid;grid-template-columns: repeat(auto-fit,minmax(180px,1fr));gap: 12px;}
+.help-nav a {display: block;padding: 10px;background: #fff;border-radius: 6px;border: 1px solid #e0e0e0;text-align: center;color: #222;font-weight: 500;transition: all 0.2s;}
+.help-nav a:hover {background: #007bff;color: #fff;border-color: #007bff;}
+.help-topic {margin-bottom: 50px;}
+.help-topic h2 {font-size: 1.6rem;margin-bottom: 12px;color: #007bff;}
+.help-topic h4 {margin-top: 20px;color: #444;}
+.help-topic p, .help-topic li {font-size: 1.05rem;line-height: 1.6;}
+footer {background: #f8f8f8;padding: 40px 0 0;margin-top: 40px;color: #222;font-size: 0.98rem;}
+.footer-container {display: flex;flex-wrap: wrap;max-width: 1100px;margin: auto;padding: 0 20px;justify-content: space-between;}
+.footer-section {flex: 1 1 180px;margin: 0 20px 30px;min-width: 180px;}
+.footer-section h5 {font-size: 1.1rem;margin-bottom: 12px;font-weight: bold;}
+.footer-section ul {list-style: none;padding: 0;margin: 0;}
+.footer-section ul li {margin-bottom: 8px;}
+.footer-section ul li a {color: #222;text-decoration: none;transition: color 0.2s;}
+.footer-section ul li a:hover {color: #007bff;}
+.footer-section.about {flex: 2 1 300px;min-width: 220px;}
+.social-links i {margin-right: 7px;}
+.footer-bottom {text-align: center;padding: 18px 0 10px;background: #f1f1f1;margin-top: 10px;font-size: 0.95rem;color: #666;}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('.help-nav a');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+<header>
+<h1>O&amp;M Help Center</h1>
+<p>Your guide to shopping, account management, and returns.</p>
+</header>
+<main>
+<nav class="help-nav">
+<ul>
+<li><a href="#orders-shipping">Orders & Shipping</a></li>
+<li><a href="#returns-refunds">Returns & Refunds</a></li>
+<li><a href="#payments-account">Payments & Account</a></li>
+<li><a href="#product-info">Product Info</a></li>
+<li><a href="#reset-password">Reset Password</a></li>
+<li><a href="#create-account">Create Account</a></li>
+<li><a href="#return-policy">Return Policy</a></li>
+</ul>
+</nav>
+<section id="orders-shipping" class="help-topic">
+<h2>Orders & Shipping</h2>
+<ul>
+<li><strong>Do you ship internationally?</strong> Not yet, but international shipping will be available soon.</li>
+<li><strong>How long does delivery take?</strong> 3–5 business days after confirmation.</li>
+<li><strong>Can I change my shipping address?</strong> Within 1 hour after placing the order via customer service.</li>
+<li><strong>Where is my order?</strong> Track your order via the link in your confirmation email.</li>
+<li><strong>What if my order is late?</strong> Contact support if your order hasn’t arrived 2 days after the expected date.</li>
+</ul>
+</section>
+<section id="returns-refunds" class="help-topic">
+<h2>Returns & Refunds</h2>
+<ul>
+<li><strong>What is your return window?</strong> 30 days from delivery.</li>
+<li><strong>How do I return an item?</strong> Start a return through your account or contact support.</li>
+<li><strong>What items are not eligible?</strong> Worn, washed, or damaged items, and final sale items.</li>
+<li><strong>When will I be refunded?</strong> Within 5–7 business days after inspection.</li>
+<li><strong>Do you offer exchanges?</strong> Not yet, only refunds are available currently.</li>
+</ul>
+</section>
+<section id="payments-account" class="help-topic">
+<h2>Payments & Account</h2>
+<ul>
+<li><strong>Which payment methods are accepted?</strong> Visa, Mastercard, PayPal.</li>
+<li><strong>Is payment secure?</strong> Yes, we use SSL encryption and trusted partners.</li>
+<li><strong>Can I change my email or password?</strong> Yes, in your account settings.</li>
+</ul>
+</section>
+<section id="product-info" class="help-topic">
+<h2>Product Information & Sizing</h2>
+<ul>
+<li><strong>How do I choose my size?</strong> Use the size chart on each product page.</li>
+<li><strong>Are your items authentic?</strong> Yes, all are 100% authentic and quality-checked.</li>
+<li><strong>Will items be restocked?</strong> Sign up for notifications on product pages.</li>
+</ul>
+</section>
+<section id="reset-password" class="help-topic">
+<h2>Reset Your Password</h2>
+<ol>
+<li>Go to the <a href="reset-password.html">Reset Password</a> page.</li>
+<li>Enter your registered email address.</li>
+<li>Check your email for the reset link.</li>
+<li>Click the link and set a new password.</li>
+</ol>
+</section>
+<section id="create-account" class="help-topic">
+<h2>Create an O&amp;M Account</h2>
+<ol>
+<li>Visit the <a href="signup.html">Sign Up</a> page.</li>
+<li>Fill in your details including name, email, and password.</li>
+<li>Click "Create Account" and confirm via email link.</li>
+</ol>
+</section>
+<section id="return-policy" class="help-topic">
+<h2>Return Policy</h2>
+<p>You can return items within 30 days of delivery. Items must be unworn, unwashed, with tags and original packaging.</p>
+<p>To start a return, go to "My Orders" in your account or contact support with your order number.</p>
+</section>
+</main>
+<footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="online-shop.html">Men's Clothing</a></li>
+                    <li><a href="online-shop.html">Women's Clothing</a></li>
+                    <li><a href="online-shop.html">Accessories</a></li>
+                    <li><a href="online-shop.html">New Arrivals</a></li>
+                    <li><a href="online-shop.html">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Customer Service</h5>
+                <ul>
+                    <li><a href="help-center.html">Help Center</a></li>
+                    <li><a href="help-center.html">Shipping & Returns</a></li>
+                    <li><a href="help-center.html">Order Tracking</a></li>
+                    <li><a href="help-center.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Connect</h5>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/share/1SYU3F9tb7/"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/omar_muhammeddd_?igsh=MTQ0NnN4dmNteWNwdQ=="><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="x.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h5>About O&amp;M</h5>
+                <p>Discover your perfect style with our curated collection of fashion-forward clothing and accessories. O&amp;M brings you the latest trends and timeless classics for every occasion.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 O&amp;M. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

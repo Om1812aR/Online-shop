@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Discover your perfect style with our curated collection of fashion-forward clothing and accessories.">
+<meta name="keywords" content="O&M, fashion, clothing, accessories, online shopping, sign in, login">
+<meta name="author" content="Omar Gouda">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<title>O&M — Online Shop</title>
+<style>
+:root {--accent:#222;--primary:#007bff;--muted:#666;--card:#fff;--bg:#fafafa;--overlay:rgba(0,0,0,0.4)}
+body {font-family:Inter, Arial, sans-serif; margin:0; background:var(--bg);}
+.top-bar {display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:#fff;border-bottom:1px solid #e9e9e9;position:sticky;top:0;z-index:999}
+nav.main-nav a {margin:0 12px;color:var(--accent);text-decoration:none;font-weight:500}
+nav.main-nav a:hover {color:var(--primary)}
+.top-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  position: relative;
+  margin-left: 10px;
+  color: var(--accent);
+}
+
+.top-icons button:hover {
+  color: var(--primary);
+}
+.cart-count {position:absolute;top:-6px;right:-8px;background:var(--primary);color:#fff;border-radius:50%;padding:2px 6px;font-size:0.75rem;}
+.hero {position:relative;background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop') center/cover no-repeat;padding:120px 20px;color:#fff;text-align:center}
+.hero::after {content:'';position:absolute;inset:0;background:var(--overlay)}
+.hero-inner {position:relative;z-index:2}
+.categories, .product-section {padding:40px 20px;max-width:1200px;margin:auto}
+.category-grid, .product-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.category-card {position:relative;overflow:hidden;border-radius:8px;cursor:pointer}
+.category-card img {width:100%;height:250px;object-fit:cover;transition:transform 0.3s}
+.category-card:hover img {transform:scale(1.05)}
+.category-card span {position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 12px;border-radius:4px;font-size:1rem}
+.product {position:relative;background:var(--card);padding:12px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+.product img {width:100%;height:300px;object-fit:cover;border-radius:6px}
+.product .wishlist-heart {position:absolute;top:10px;right:10px;font-size:1.2rem;color:#fff;background:rgba(0,0,0,0.4);border-radius:50%;padding:6px;cursor:pointer;display:none}
+.product.wishlisted .wishlist-heart {display:block;color:red;background:#fff}
+.product h4 {margin:12px 0 4px;font-size:1.1rem}
+.product p {color:var(--muted);margin-bottom:12px}
+.btn-basket, .btn-wishlist {width:100%;padding:8px;margin-bottom:8px;border:none;border-radius:4px;cursor:pointer;font-weight:500}
+.btn-basket {background:var(--primary);color:#fff}
+.btn-basket.added {background:green}
+.btn-wishlist {background:#f1f1f1;color:var(--accent)}
+ footer {
+        background: #f8f8f8;
+        padding: 40px 0 0 0;
+        margin-top: 40px;
+        color: #222;
+        font-size: 0.98rem;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+    .footer-section {
+        flex: 1 1 180px;
+        margin: 0 20px 30px 20px;
+        min-width: 180px;
+    }
+    .footer-section h5 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+        color: #222;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-section ul li a:hover {
+        color: #007bff;
+    }
+    .footer-section.about {
+        flex: 2 1 300px;
+        min-width: 220px;
+    }
+    .social-links i {
+        margin-right: 7px;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding: 18px 0 10px 0;
+        background: #f1f1f1;
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #666;
+    }
+    @media (max-width: 900px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-section {
+            margin: 0 0 30px 0;
+        }
+    }
+    @media (max-width: 600px) {
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Logo Styling */
+        .logo-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--accent);
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .logo-link:visited {
+            color: var(--accent);
+        }
+
+        .logo-link:hover {
+            transform: scale(1.15);
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        .main-nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Top Icons */
+        .top-icons button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            margin-left: 10px;
+            color: var(--accent);
+        }
+
+        .top-icons button:hover {
+            color: var(--primary);
+        }
+
+        .cart-count {
+            background: red;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -8px;
+        }
+      }
+</style>
+</head>
+<body>
+<!-- Top Bar -->
+    <div class="top-bar">
+        <!-- Logo clickable to home -->
+        <a href="index.html" class="logo-link" title="Go to Home">O&amp;M</a>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Accessories & Headwear</a>
+            <a href="#">Footwear</a>
+            <a href="#">Trending</a>
+            <a href="#">Best Sellers</a>
+            <a href="#">Offers</a>
+            <a href="#">New Collection</a>
+        </nav>
+
+        <!-- Top Icons -->
+        <div class="top-icons">
+            <!-- Sign In -->
+           <a href="Index.html" title="sign-in"> <button aria-label="sign in" id="signin-btn" title="Sign In">
+                <i class="fas fa-user"></i>
+            </button></a>
+            <!-- Register -->
+            <a href="signup.html" title="Sign Up"><button aria-label="register" id="register-btn" title="Register">
+                <i class="fas fa-user-plus"></i>
+            </button></a>
+            <!-- Cart -->
+            <a href="#" title="Check your cart"><button aria-label="cart" id="cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button></a>
+        </div>
+    </div>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>O&M</h1>
+    <p>Discover your unique style with our curated collection</p>
+  </div>
+</section>
+<section class="categories">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    <div class="category-card"><img src="https://imgs.search.brave.com/exWM7jR1IQI0b5cag0d3-LQ8mpQ3AYbqu1PD5aPzd4g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzE2LzY3/Lzk1LzE2Njc5NTUy/N2Q2N2I3YjNjMzhl/ZjJkN2M3ODA5ZDQ0/LmpwZw" alt="Men"><span>Men</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/etu8g-DVGmBJ0FIprd_xo0DCLeWOhrCwvsYc8rmvOTY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTI2/NDYyNzI2OS9waG90/by9zdHJlZXQtc3R5/bGVkLXlvdW5nLXdv/bWFuLWVuam95aW5n/LWEtZGF5LWluLXRo/ZS1jaXR5LXN0cmVl/dC5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9dm1UbWQ0V2lT/emc1b3F1OWZYcWdh/T0dUYXE2SGIybmRo/N1JVY1Y2N2hJOD0" alt="Women"><span>Women</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/QyACRRQypNvjqdxJSXUhptOqn0wA7G85hJv4kJgOvsw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3F1YXJlc3Bh/Y2UtY2RuLmNvbS9j/b250ZW50L3YxLzUz/NzNjYWUxZTRiMDAz/YWQ0NjUzOWE3MS8x/NDczOTQ2NjM2NzM1/LURXUjhHSlVLTjhF/RlBJNk5JOVBRL0Vu/ZmFudCtTdHJlZXQr/U3R5bGUrYnkrR2lu/YStLaW0rUGhvdG9n/cmFwaHk" alt="Kids"><span>Kids</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/N19KH8z5Q4k3GzBwqrIqx6mPV7emvYda6uN6hHAFW0k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by90/b3Atdmlldy1hY2Nl/c3NvaXJlcy10cmF2/ZWwtd2l0aC13b21l/bi1jbG90aGluZy1j/b25jZXB0LXdoaXRl/LW1vYmlsZXBob25l/LXdhdGNoLWJhZy1o/YXQtbWFwLWNhbWVy/YS1uZWNrbGFjZS10/cm91c2Vycy1zdW5n/bGFzc2VzLXdoaXRl/LXdvb2QtdGFibGVf/MTkyMS0xMDYuanBn/P3NlbXQ9YWlzX2h5/YnJpZCZ3PTc0MCZx/PTgw" alt="Accessories"><span>accessories</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/gfArMPyLblMrlZFnWK_j3Bgw89pe6U7NGF252OuCQD8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9sZWdzLWZhc2hp/b25hYmx5LWRyZXNz/ZWQtbWVuLXdvbWVu/LW1vZGVybi1mYXNo/aW9uLXN0eWxlLWNs/b3RoZXNfMTU4NTE4/LTk1OTAuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MA" alt="Footwear"><span>Footwear</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/qWMUEVZGJziLl7CaCavz1bgBtLDXpMtKCLcp42FLLCk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzEwL2M3/L2M5LzEwYzdjOTg1/MDQ2N2ZmYmQ4ZGFj/ZjdiZWIxN2RkMmQ1/LmpwZw" alt="Trending"><span>Trending</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/cmXeW7sX1GjW1qSGuUFsLQpPlfD5w4nu3VBU_lD70Ug/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb3Jk/bWFnYXppbmUuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzA3L1RvcC0xMC1C/ZXN0LVNlbGxpbmct/Q2xvdGhpbmctQnJh/bmRzLUluLVRoZS1X/b3JsZC1zYWp0Lmpw/Zw" alt="Best Sellers"><span>Best Sellers</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/43jhNv8tFgfQGVOMfUeATimPVzmQBDTxb9AQxoiVQKw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODcx/NDY4MzgyL3ZlY3Rv/ci9mbGF0LWxpbmVh/ci1zYWxlLWxhYmVs/LWJhbm5lci10ZW1w/bGF0ZS1kZXNpZ24t/dmVjdG9yLWlsbHVz/dHJhdGlvbi5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9ZFl2/T2R3dWd0OURkVFdr/eTVwbU41SWowWUcw/OWhWeDBwUFlsdzhm/dUxjcz0" alt="Offers"><span>Offers</span></div>
+    <div class="category-card"><img src="https://imgs.search.brave.com/YWbPZLiUaJNlZB6YeYAn5YGCdNXuq-MFeX-R7XSXO34/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE2/OTM3ODIwMC9waG90/by90cmVuZHktbGFk/eS1hZGp1c3Rpbmct/aGFpci5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9OVowN2Zx/Tkpva2REU0IxRGtC/dk43MUMxSW5zRmd1/MkQzMDJDT3ZaaUZU/UT0" alt="New Collection"><span>New Collection</span></div>
+  </div>
+</section>
+<section class="product-section">
+  <h2>Featured Products</h2>
+  <div class="product-grid">
+    <article class="product" data-name="Classic Denim Jacket" data-price="89">
+      <div class="wishlist-heart"><i class="fas fa-heart"></i></div>
+      <img src="https://imgs.search.brave.com/AOivMhozXRafwUVK9tfBjuIiH_zhoHr0vwSB0cbt0DI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cy5i/bGFrZWx5Y2xvdGhp/bmcuY29tL2Nkbi9z/aG9wL2ZpbGVzLzE4/OTVCTFVFXzcwMHgu/anBnP3Y9MTcxMDc2/NDIzMw" alt="Denim Jacket">
+      <h4>Classic Denim Jacket</h4>
+      <p>$89</p>
+      <button class="btn-basket">Add to Basket</button>
+      <button class="btn-wishlist">Add to Wishlist</button>
+    </article>
+    <article class="product" data-name="Leather Chelsea Boots" data-price="129">
+      <div class="wishlist-heart"><i class="fas fa-heart"></i></div>
+      <img src="https://imgs.search.brave.com/b_zhKXbFXROYbQNOZxB-VpSunSktTALMFsXLosC8yes/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXNv/dXJjZXMubWFuZG1k/aXJlY3QuY29tL0lt/YWdlcy9fZGVmYXVs/dC9iL3MvMy9iczMx/MzMzXzFfdGh1bWIu/anBn" alt="Leather Chelsea Boots">
+      <h4>Leather Chelsea Boots</h4>
+      <p>$129</p>
+      <button class="btn-basket">Add to Basket</button>
+      <button class="btn-wishlist">Add to Wishlist</button>
+    </article>
+    <article class="product" data-name="Tailored Wool Coat" data-price="149">
+      <div class="wishlist-heart"><i class="fas fa-heart"></i></div>
+      <img src="https://imgs.search.brave.com/tUdRrSsH4CvLe_eyBDE5cl0deXpOeIzgIgiQbMoz1gY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzI4MTMyNjkwL3Iv/aWwvMzNiNzU0LzY0/NDgxODE5MzcvaWxf/MzAweDMwMC42NDQ4/MTgxOTM3X2pkNDgu/anBn" alt="Wool Coat">
+      <h4>Tailored Wool Coat</h4>
+      <p>$149</p>
+      <button class="btn-basket">Add to Basket</button>
+      <button class="btn-wishlist">Add to Wishlist</button>
+    </article>
+  </div>
+</section>
+<script>
+let cartCount = 0;
+const cartCountEl = document.getElementById('cart-count');
+document.querySelectorAll('.btn-basket').forEach(btn => {
+  btn.addEventListener('click', e => {
+    if (!btn.classList.contains('added')) {
+      cartCount++;
+      cartCountEl.textContent = cartCount;
+      btn.textContent = 'Added to Cart';
+      btn.classList.add('added');
+    }
+  });
+});
+document.querySelectorAll('.btn-wishlist').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const product = e.target.closest('.product');
+    product.classList.toggle('wishlisted');
+  });
+});
+document.querySelectorAll('.wishlist-heart').forEach(heart => {
+  heart.addEventListener('click', e => {
+    const product = e.target.closest('.product');
+    product.classList.toggle('wishlisted');
+    heart.classList.toggle('wishlisted');
+  });
+});
+</script>
+</section>
+<footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="online-shop.html">Men's Clothing</a></li>
+                    <li><a href="online-shop.html">Women's Clothing</a></li>
+                    <li><a href="online-shop.html">Accessories</a></li>
+                    <li><a href="online-shop.html">New Arrivals</a></li>
+                    <li><a href="online-shop.html">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Customer Service</h5>
+                <ul>
+                    <li><a href="help-center.html">Help Center</a></li>
+                    <li><a href="help-center.html">Shipping & Returns</a></li>
+                    <li><a href="help-center.html">Order Tracking</a></li>
+                    <li><a href="help-center.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Connect</h5>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/share/1SYU3F9tb7/"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/omar_muhammeddd_?igsh=MTQ0NnN4dmNteWNwdQ=="><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="x.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h5>About O&amp;M</h5>
+                <p>Discover your perfect style with our curated collection of fashion-forward clothing and accessories. O&amp;M brings you the latest trends and timeless classics for every occasion.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 O&amp;M. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

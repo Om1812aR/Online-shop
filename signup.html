@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign up for a new account.">
+    <meta name="keywords" content="sign up, register, user account">
+    <meta name="author" content="Omar Gouda">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <title>Sign Up</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="brand-header">
+        <span class="brand-title">O&amp;M</span>
+    </div>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" action="/signup" method="POST" autocomplete="off">
+            <div class="form-section-title">Personal Information</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="middle-name">Middle Name:</label>
+                    <input type="text" id="middle-name" name="middle_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last_name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9+\-\s]{7,}" required>
+            </div>
+
+            <div class="form-section-title">Delivery Address</div>
+            <div class="form-group">
+                <label for="recipient-name">Recipient Full Name:</label>
+                <input type="text" id="recipient-name" name="recipient_name" required>
+            </div>
+            <div class="form-group">
+                <label for="street-address">Street Address (incl. Apt/Suite):</label>
+                <input type="text" id="street-address" name="street_address" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">City/State:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{4,10}" required>
+                </div>
+            </div>
+
+            <div class="form-section-title">Billing Details</div>
+            <div class="form-group">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card_name" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group" style="position:relative;">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card_number" maxlength="19" required oninput="detectCardType(this)">
+                    <span id="card-type-icon" style="position:absolute;right:10px;top:38px;font-size:1.2em;color:#007bff;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date (MM/YY):</label>
+                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+                </div>
+                <div class="form-group">
+                    <label for="ccv">CVV:</label>
+                    <input type="text" id="ccv" name="ccv" maxlength="4" pattern="[0-9]{3,4}" required>
+                </div>
+            </div>
+            <button type="submit">Register</button>
+            <p class="error-message" id="error-message"></p>
+        </form>
+        <div class="links">
+            <a href="Index.html">Already have an account?</a>
+            <a href="reset-password.html">Forgot Password?</a>
+            <a href="help-center.html">Contact Support</a>
+        </div>
+    </div>
+<footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="online-shop.html">Men's Clothing</a></li>
+                    <li><a href="online-shop.html">Women's Clothing</a></li>
+                    <li><a href="online-shop.html">Accessories</a></li>
+                    <li><a href="online-shop.html">New Arrivals</a></li>
+                    <li><a href="online-shop.html">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Customer Service</h5>
+                <ul>
+                    <li><a href="help-center.html">Help Center</a></li>
+                    <li><a href="help-center.html">Shipping & Returns</a></li>
+                    <li><a href="help-center.html">Order Tracking</a></li>
+                    <li><a href="help-center.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Connect</h5>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/share/1SYU3F9tb7/"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/omar_muhammeddd_?igsh=MTQ0NnN4dmNteWNwdQ=="><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="x.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h5>About O&amp;M</h5>
+                <p>Discover your perfect style with our curated collection of fashion-forward clothing and accessories. O&amp;M brings you the latest trends and timeless classics for every occasion.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 O&amp;M. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Card type detection (Visa/Mastercard)
+        function detectCardType(input) {
+            const value = input.value.replace(/\s+/g, '');
+            const icon = document.getElementById('card-type-icon');
+            if (/^4[0-9]{0,}$/.test(value)) {
+                icon.innerHTML = '<i class="fab fa-cc-visa"></i>';
+            } else if (/^(5[1-5][0-9]{0,}|2[2-7][0-9]{0,})$/.test(value)) {
+                icon.innerHTML = '<i class="fab fa-cc-mastercard"></i>';
+            } else {
+                icon.innerHTML = '';
+            }
+        }
+        // Optional: Format card number input with spaces
+        document.getElementById('card-number').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '').substring(0,16);
+            value = value.replace(/(.{4})/g, '$1 ').trim();
+            e.target.value = value;
+            detectCardType(e.target);
+        });
+        // Form submission handler
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.textContent = ''; // Clear previous errors
+
+            // Basic validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match.';
+                return;
+            }
+
+            // Submit the form if validation passes
+            this.submit();
+        });
+        // Optional: Add focus styles to inputs
+        document.querySelectorAll('input, select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#007bff';
+            });
+            input.addEventListener('blur', function() {
+                this.style.borderColor = '#ccc';
+            });
+        });
+        // Optional: Add hover effect to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseover', function() {
+                this.style.backgroundColor = '#444';
+            });
+            button.addEventListener('mouseout', function() {
+                this.style.backgroundColor = '#222';
+            });
+        });
+        // Optional: Add responsive styles for smaller screens
+        window.addEventListener('resize', function() {
+            const container = document.querySelector('.signup-container');
+            if (window.innerWidth < 600) {
+                container.style.padding = '20px';
+                container.style.maxWidth = '90%';
+            } else {
+                container.style.padding = '32px 28px 24px 28px';
+                container.style.maxWidth = '520px';
+            }
+        });
+        // Initial responsive styles
+        if (window.innerWidth < 600) {
+            const container = document.querySelector('.signup-container');
+            container.style.padding = '20px';
+            container.style.maxWidth = '90%';
+        }
+            // Add focus styles to inputs
+            document.querySelectorAll('input, select').forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#007bff';
+                });
+                input.addEventListener('blur', function() {
+                    this.style.borderColor = '#ccc';
+                });
+            });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 0;
+            margin: 0;
+        }
+        .brand-header {
+            background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop') center/cover no-repeat;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .brand-header::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.45);
+        }
+        .brand-title {
+            position: relative;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        .signup-container {
+            background: #fff;
+            max-width: 520px;
+            margin: 0 auto 30px auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+        }
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 24px;
+            color: #007bff;
+        }
+        .form-section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        button[type="submit"] {
+        background: linear-gradient(90deg, #222 60%, #444 100%);
+        box-shadow: 0 2px 8px rgba(34,34,34,0.08);
+        letter-spacing: 0.04em;
+        font-size: 1.08rem;
+        margin-top: 6px;
+        }
+        button[type="submit"]:hover {
+        background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    }
+        .error-message {
+            color: #d9534f;
+            text-align: center;
+            margin-top: 10px;
+            min-height: 22px;
+        }
+        .links {
+            text-align: center;
+            margin-top: 18px;
+        }
+        .links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #222;
+            text-decoration: none;
+            font-size: 0.98rem;
+            transition: color 0.2s;
+        }
+        .links a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        footer {
+        background: #f8f8f8;
+        padding: 40px 0 0 0;
+        margin-top: 40px;
+        color: #222;
+        font-size: 0.98rem;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+    .footer-section {
+        flex: 1 1 180px;
+        margin: 0 20px 30px 20px;
+        min-width: 180px;
+    }
+    .footer-section h5 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+        color: #222;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-section ul li a:hover {
+        color: #007bff;
+    }
+    .footer-section.about {
+        flex: 2 1 300px;
+        min-width: 220px;
+    }
+    .social-links i {
+        margin-right: 7px;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding: 18px 0 10px 0;
+        background: #f1f1f1;
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #666;
+    }
+    @media (max-width: 900px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-section {
+            margin: 0 0 30px 0;
+        }
+    }
+    </style>
+</body>
+</html>

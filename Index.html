@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover your perfect style with our curated collection of fashion-forward clothing and accessories.">
+    <meta name="keywords" content="O&M, fashion, clothing, accessories, online shopping, sign in, login">
+    <meta name="author" content="Omar Gouda">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Sign In</title>
+</head>
+<body style="background-color: #fff;">
+   <header>
+        <div class="title-bg">
+            <h1 class="title-text">Welcome Back</h1>
+            <p class="subtitle">Discover your perfect style with our curated collection of fashion-forward clothing and accessories.</p>
+        </div>
+    </header>
+    <form id="signin-form" action="/signin" method="POST">
+        <div class="form-group">
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Sign In</button>
+        <p class="error-message" id="error-message"></p>
+    </form>
+    <div class="links">
+        <a href="signup.html">Create New Account</a>
+        <a href="reset-password.html">Forgot Password?</a>
+        <a href="help-center.html">Contact Support</a>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="online-shop.html">Men's Clothing</a></li>
+                    <li><a href="online-shop.html">Women's Clothing</a></li>
+                    <li><a href="online-shop.html">Accessories</a></li>
+                    <li><a href="online-shop.html">New Arrivals</a></li>
+                    <li><a href="online-shop.html">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Customer Service</h5>
+                <ul>
+                    <li><a href="help-center.html">Help Center</a></li>
+                    <li><a href="help-center.html">Shipping & Returns</a></li>
+                    <li><a href="help-center.html">Order Tracking</a></li>
+                    <li><a href="help-center.html">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Connect</h5>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/share/1SYU3F9tb7/"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/omar_muhammeddd_?igsh=MTQ0NnN4dmNteWNwdQ=="><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="x.com"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="pinterest.com"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                </ul>
+            </div>
+            <div class="footer-section about">
+                <h5>About O&amp;M</h5>
+                <p>Discover your perfect style with our curated collection of fashion-forward clothing and accessories. O&amp;M brings you the latest trends and timeless classics for every occasion.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 O&amp;M. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('signin-form');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            errorMessage.textContent = ''; // Clear previous error message
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simulate a sign-in process
+            if (username === 'testuser' && password === 'password123') {
+                alert('Sign in successful!');
+                // Redirect to homepage or dashboard
+                window.location.href = 'index.html';
+            } else {
+                errorMessage.textContent = 'Invalid username or password. Please try again.';
+            }
+        });
+    });
+    </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .title-bg {
+        background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&h=900&fit=crop') center/cover no-repeat;
+        padding: 60px 20px 40px 20px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+    }
+    .title-bg::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1;
+    }
+    .title-text, .subtitle {
+        position: relative;
+        z-index: 2;
+    }
+    .title-text {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    form {
+        max-width: 400px;
+        margin: 40px auto 0 auto;
+        background: #fff;
+        padding: 24px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .form-group {
+        margin-bottom: 18px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: #222;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    .error-message {
+        color: #d9534f;
+        text-align: center;
+        margin-top: 10px;
+        min-height: 22px;
+    }
+    .links {
+        text-align: center;
+        margin-top: 18px;
+    }
+    .links a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #222;
+        text-decoration: none;
+        font-size: 0.98rem;
+        transition: color 0.2s;
+    }
+    .links a:hover {
+        color: #007bff;
+        text-decoration: underline;
+    }
+    footer {
+        background: #f8f8f8;
+        padding: 40px 0 0 0;
+        margin-top: 40px;
+        color: #222;
+        font-size: 0.98rem;
+    }
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+    .footer-section {
+        flex: 1 1 180px;
+        margin: 0 20px 30px 20px;
+        min-width: 180px;
+    }
+    .footer-section h5 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        font-weight: bold;
+    }
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+    .footer-section ul li a {
+        color: #222;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-section ul li a:hover {
+        color: #007bff;
+    }
+    .footer-section.about {
+        flex: 2 1 300px;
+        min-width: 220px;
+    }
+    .social-links i {
+        margin-right: 7px;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding: 18px 0 10px 0;
+        background: #f1f1f1;
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #666;
+    }
+    @media (max-width: 900px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-section {
+            margin: 0 0 30px 0;
+        }
+    }
+    @media (max-width: 600px) {
+        .title-bg {
+            padding: 40px 10px 24px 10px;
+        }
+        form {
+            width: 95%;
+            padding: 18px 8px;
+        }
+        .footer-container {
+            padding: 0 8px;
+        }
+    }
+    #signin-form {
+        border: 1.5px solid #e0e0e0;
+        background: linear-gradient(135deg, #f9fafc 60%, #f1f3f6 100%);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        position: relative;
+        overflow: hidden;
+    }
+
+    #signin-form::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle at 60% 40%, #e3eafc 0%, #fff0 80%);
+        z-index: 0;
+    }
+
+    #signin-form .form-group label {
+        font-size: 1.04rem;
+        color: #222;
+        letter-spacing: 0.02em;
+        font-weight: 600;
+    }
+
+    #signin-form .form-group input[type="text"],
+    #signin-form .form-group input[type="password"] {
+        background: #f5f7fa;
+        border: 1.5px solid #cfd8dc;
+        font-size: 1.05rem;
+        padding: 12px 14px;
+        border-radius: 6px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        box-shadow: none;
+    }
+
+    #signin-form .form-group input[type="text"]:focus,
+    #signin-form .form-group input[type="password"]:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.10);
+        background: #eef4fb;
+    }
+
+    #signin-form button[type="submit"] {
+        background: linear-gradient(90deg, #222 60%, #444 100%);
+        box-shadow: 0 2px 8px rgba(34,34,34,0.08);
+        letter-spacing: 0.04em;
+        font-size: 1.08rem;
+        margin-top: 6px;
+    }
+
+    #signin-form button[type="submit"]:hover {
+        background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    }
+
+    #signin-form .error-message {
+        font-size: 0.98rem;
+        font-style: italic;
+        letter-spacing: 0.01em;
+    }
+
+    #signin-form .form-group input[type="text"]::placeholder,
+    #signin-form .form-group input[type="password"]::placeholder {
+        color: #b0b8c1;
+        font-size: 0.98rem;
+        opacity: 1;
+    }
+    </style>
+</body>
+</html>
